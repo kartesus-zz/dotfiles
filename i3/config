@@ -45,8 +45,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+# start launcher
+bindsym $mod+space exec rofi -show run -bg "#222222" -fg "#888888" -hlbg "#285577" -hlfg "#ffffff"
 
 # change focus
 bindsym $mod+j focus left
@@ -141,3 +141,6 @@ bindsym XF86AudioMute exec amixer -q set Master mute
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+
+# Screen lock
+bindsym Control+$mod+l exec sh ~/.i3/lock.sh

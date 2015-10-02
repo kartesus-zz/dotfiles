@@ -1,8 +1,6 @@
 execute pathogen#infect()
 set nocompatible
 set background=dark
-colorscheme anderson " hack to make deepsea work
-colorscheme deepsea
 syntax on
 filetype plugin indent on
 let mapleader='\'
@@ -27,10 +25,15 @@ set nobackup
 set noswapfile
 set pastetoggle=<F2>
 set autowrite
-nnoremap ; :
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 nmap <silent> ,, :nohlsearch<CR>
 cmap w!! w !sudo tee % > /dev/null
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+set guioptions-=L
+set guifont=Source\ Code\ Pro\ Light\ 12
+colorscheme material

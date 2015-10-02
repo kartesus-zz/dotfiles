@@ -86,3 +86,4 @@ setxkbmap -option ctrl:nocaps
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias tree="tree -I vendors -I node_modules"

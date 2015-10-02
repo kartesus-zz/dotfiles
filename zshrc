@@ -87,3 +87,4 @@ setxkbmap -option ctrl:nocaps
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias tree="tree -I vendors -I node_modules"
+alias vim="gvim"

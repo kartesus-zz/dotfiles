@@ -1,11 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/home/kartesus/Code/wdg_vda'
-let g:netrw_dirhist_2='/home/kartesus/Code/wdg_vda/ade'
-let g:netrw_dirhist_3='/home/kartesus/Code/Medici'
-let g:netrw_dirhist_4='/home/kartesus/Code/Medici/api'
-let g:netrw_dirhist_5='/home/kartesus/Code/Medici'
-let g:netrw_dirhist_6='/home/kartesus/Code/Medici/api'
-let g:netrw_dirhist_7='/home/kartesus/Code/Medici'
-let g:netrw_dirhist_8='/home/kartesus/Code/Medici/api'
-let g:netrw_dirhist_9='/home/kartesus'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/kartesus'

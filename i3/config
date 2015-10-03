@@ -1,13 +1,20 @@
+# vim:filetype=i3
+#
 # http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod1
 
 # Execute at startup
-exec --no-startup-id feh --bg-scale /home/kartesus/Pictures/bash.jpg
+set $wallpaper "./Pictures/stairs.jpg"
+exec --no-startup-id feh --bg-scale $wallpaper
 exec --no-startup-id nm-applet
+exec --no-startup-id setxkbmap -option ctrl:nocaps
+exec --no-startup-id synclient VertScrollDelta=-111
+exec --no-startup-id synclient HorizScrollDelta=-111
 
-# start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+# Change keyboard layout bindsym $mod+semicolon exec setxkbmap us
+bindsym $mod+Shift+semicolon exec setxkbmap us -variant alt-intl
 
 # Setup workspaces
 set $www "1: www"
@@ -38,6 +45,8 @@ bindsym $mod+Shift+0 move container to workspace 10
 # Configuration for new window borders
 new_window none
 new_float pixel 1
+
+for_window [title="Chromium"] fullscreen enable
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

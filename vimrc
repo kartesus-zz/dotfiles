@@ -19,7 +19,6 @@ set smartcase
 set smarttab
 set hlsearch
 set incsearch
-set visualbell
 set noerrorbells
 set nobackup
 set noswapfile

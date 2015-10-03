@@ -59,9 +59,6 @@ export PATH="$RUBY_BIN:/usr/local/sbin:/usr/local/bin:/usr/bin"
 
 source $ZSH/oh-my-zsh.sh
 
-# Maps Ctrl to Caps Lock
-setxkbmap -option ctrl:nocaps
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -86,5 +83,5 @@ setxkbmap -option ctrl:nocaps
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias tree="tree -I vendors -I node_modules"
+alias tree="tree -I 'vendor|node_modules'"
 alias vim="gvim"

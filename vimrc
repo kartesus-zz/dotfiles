@@ -34,5 +34,5 @@ set guioptions-=m
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
-set guifont=Source\ Code\ Pro\ Light\ 12
-colorscheme material
+set guifont=Source\ Code\ Pro\ 12
+colorscheme anderson

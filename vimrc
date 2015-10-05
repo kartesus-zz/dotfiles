@@ -24,15 +24,19 @@ set nobackup
 set noswapfile
 set pastetoggle=<F2>
 set autowrite
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+map <C-h> :bp<CR>
+map <C-l> :bn<CR>
+map <C-d> :bd<CR>
 nmap <silent> ,, :nohlsearch<CR>
 cmap w!! w !sudo tee % > /dev/null
 set guioptions-=m
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
-set guifont=Source\ Code\ Pro\ 12
+set guifont=Source\ Code\ Pro\ 11
 colorscheme anderson
+
+let g:ctrlp_user_command = [
+	\ '.git', 'cd %s && git ls-files . -co --exclude-standard',
+	\ 'find %s -type f'
+	\ ]

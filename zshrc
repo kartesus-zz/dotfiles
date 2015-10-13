@@ -83,5 +83,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias tree="tree -I 'vendor|node_modules'"
+alias tree="tree -C -I 'vendor|node_modules'"
 alias vim="gvim"

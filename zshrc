@@ -85,3 +85,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias tree="tree -C -I 'vendor|node_modules'"
 alias vim="gvim"
+alias open="xdg-open"

@@ -8,49 +8,63 @@ set $mod Mod1
 set $wallpaper "./Pictures/stairs.jpg"
 exec --no-startup-id feh --bg-scale $wallpaper
 exec --no-startup-id nm-applet
-exec --no-startup-id setxkbmap -option ctrl:nocaps
+exec --no-startup-id setxkbmap us -option ctrl:nocaps
 exec --no-startup-id synclient VertScrollDelta=-111
 exec --no-startup-id synclient HorizScrollDelta=-111
 exec --no-startup-id synclient PalmDetect=1
 
 # Open terminal beside and below
-bindsym $mod+Return split h; exec i3-sensible-terminal
-bindsym $mod+Shift+Return split v; exec i3-sensible-terminal
+bindsym $mod+Down layout splitv
+bindsym $mod+Right layout splith
+bindsym $mod+Shift+Down split v
+bindsym $mod+Shift+Right split h
+bindsym $mod+Return exec i3-sensible-terminal
 
 # Change keyboard layout bindsym $mod+semicolon exec setxkbmap us
-bindsym $mod+Shift+semicolon exec setxkbmap us -variant alt-intl
+bindsym $mod+semicolon exec setxkbmap us -option ctrl:nocaps
+bindsym $mod+Shift+semicolon exec setxkbmap us -option ctrl:nocaps -variant alt-intl
 
 # Setup workspaces
 set $www "1: www"
-set $dev "2: dev"
+set $popcorn "8: popcorn"
+set $spotify "9: spotify"
+set $chat "10: chat"
 
 bindsym $mod+1 workspace $www
-bindsym $mod+2 workspace $dev
+bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+8 workspace $popcorn
+bindsym $mod+9 workspace $spotify
+bindsym $mod+0 workspace $chat
 
 bindsym $mod+Shift+1 move container to workspace $www
-bindsym $mod+Shift+2 move container to workspace $dev
+bindsym $mod+Shift+2 move container to workspace 2
 bindsym $mod+Shift+3 move container to workspace 3
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+8 move container to workspace $popcorn
+bindsym $mod+Shift+9 move container to workspace $spotify
+bindsym $mod+Shift+0 move container to workspace $chat
 
 # Configuration for new window borders
 new_window none
 new_float pixel 1
 
+# Fullscreen apps
 for_window [title="Chromium"] fullscreen enable
+for_window [title="Popcorn"] fullscreen enable
+for_window [title="Spotify"] fullscreen enable
+
+# Assign some apps to specific workspaces
+assign [title="Chromium"] $www
+assign [title="Popcorn"] $popcorn
+assign [title="Spotify"] $spotify
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

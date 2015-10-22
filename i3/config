@@ -4,31 +4,35 @@
 
 set $mod Mod1
 
-# Execute at startup
+# Setup workspaces
+set $www "1: www"
+set $popcorn "8: popcorn"
+set $spotify "9: spotify"
+set $chat "10: chat"
+
 set $wallpaper "./Pictures/stairs.jpg"
+
+# Execute at startup
 exec --no-startup-id feh --bg-scale $wallpaper
 exec --no-startup-id nm-applet
 exec --no-startup-id setxkbmap us -option ctrl:nocaps
 exec --no-startup-id synclient VertScrollDelta=-111
 exec --no-startup-id synclient HorizScrollDelta=-111
 exec --no-startup-id synclient PalmDetect=1
+exec --no-startup-id i3-msg "workspace $www; exec /usr/bin/chromium"
 
 # Open terminal beside and below
 bindsym $mod+Down layout splitv
 bindsym $mod+Right layout splith
 bindsym $mod+Shift+Down split v
 bindsym $mod+Shift+Right split h
+
+# Most used software
 bindsym $mod+Return exec i3-sensible-terminal
 
 # Change keyboard layout bindsym $mod+semicolon exec setxkbmap us
 bindsym $mod+semicolon exec setxkbmap us -option ctrl:nocaps
 bindsym $mod+Shift+semicolon exec setxkbmap us -option ctrl:nocaps -variant alt-intl
-
-# Setup workspaces
-set $www "1: www"
-set $popcorn "8: popcorn"
-set $spotify "9: spotify"
-set $chat "10: chat"
 
 bindsym $mod+1 workspace $www
 bindsym $mod+2 workspace 2
